@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {View} from "react-native";
+import {View, Text} from "react-native";
+import {Card} from "react-native-elements"
 
 class Contact extends Component {
     constructor(props) {
@@ -12,8 +13,12 @@ class Contact extends Component {
     
     render() {
         return(
-            <View>
-            </View>
+            <Card   
+            featuredTitle="Contact title"
+            image={{uri: "../assets/favicon.png"}}
+        >
+            <Text style={{margin: 10}}>This is the contact component</Text>
+        </Card>
         )
     }
 }
