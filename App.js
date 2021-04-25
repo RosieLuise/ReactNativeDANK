@@ -7,6 +7,8 @@ import Home from "./components/HomeComponent";
 import Contact from "./components/ContactComponent";
 import Highlights from "./components/HighlightsComponent";
 import HighlightInfo from "./components/HighlightInfo";
+import ExhibitInfo from "./components/ExhibitInfo";
+import Exhibits from "./components/ExhibitsComponent";
 
 const Drawer = createDrawerNavigator();
 
@@ -37,6 +39,15 @@ const HighlightsStackNavigator = () => {
   )
 }
 
+const ExhibitsStackNavigator = () => {
+  return(
+    <Stack.Navigator initialRouteName="Highlights">
+      <Stack.Screen name="Exhibits" component={Exhibits} />
+      <Stack.Screen name="ExhibitInfo" component={ExhibitInfo} />
+    </Stack.Navigator>
+  )
+}
+
 export default function App() {
   return (
     <NavigationContainer>
@@ -44,6 +55,7 @@ export default function App() {
         <Drawer.Screen name="Home" component={HomeStackNavigator} />
         <Drawer.Screen name="Contact" component={ContactStackNavigator} />
         <Drawer.Screen name="Highlights" component={HighlightsStackNavigator} />
+        <Drawer.Screen name="Exhibits" component={ExhibitsStackNavigator} />
       </Drawer.Navigator>
     </NavigationContainer>
   );

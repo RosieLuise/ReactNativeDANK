@@ -11,7 +11,7 @@ export const EXHIBITS = [
     },
     {
         id: 1,
-        name: "Push and Pull",
+        name: "Second Section",
         image1: "./assets/images/left-wall.jpg",
         image2: "../assets/images/hanseatic.jpg",
         image3: "../assets/images/luggage.jpg",

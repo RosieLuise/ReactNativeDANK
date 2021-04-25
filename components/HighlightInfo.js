@@ -2,7 +2,7 @@ import React from 'react';
 import {Button, View, Text} from "react-native";
 import {Card} from "react-native-elements"
 
-function Item(props) {
+function HighlightInfo(props) {
     return(
         <View>
             <Card   
@@ -14,4 +14,4 @@ function Item(props) {
         </View>
     )
 }
-export default Item;
+export default HighlightInfo;

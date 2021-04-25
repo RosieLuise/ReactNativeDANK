@@ -1,32 +1,33 @@
 import React, { Component } from 'react';
-import { EXHIBITS } from './shared/exhibits'
+import { EXHIBITS } from '../shared/exhibits';
+import { FlatList } from 'react-native';
+import { ListItem } from 'react-native-elements';
 
 class Exhibits extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            exhibits: EXHIBITS
+            exhibits: EXHIBITS,
+            navigation: props.navigation
         };
     }
 
     render() {
         
-        const renderExhibit = ({item}) => {
+        const renderExhibitItem = ({item}) => {
+            console.log('string item: ', item);
             return (
-                <ListItem
-                    onPress={() => }
-                    title={item.name}
-                    text1={item.text1}
-                    image1={item.image1}
-                    text2={item.text2}
-                    image2={item.image2}
-                    text3={item.text3}
-                    image3={item.image3}
-                />
+                <ListItem>
+                    {/* // title={item.name}
+                    // image1={item.image1}
+                    // onPress={() => this.state.navigation.navigate("ExhibitInfo", {item})} */}
+                    <ListItem.Title>{item.name}</ListItem.Title>
+                </ListItem>
             );
         };
 
+        console.log(this.state.exhibits);
         return (
             <FlatList
                 data={this.state.exhibits}
