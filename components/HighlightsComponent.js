@@ -2,7 +2,7 @@ import React from 'react';
 import {Button, View, Text} from "react-native";
 import { createStackNavigator } from '@react-navigation/stack';
 import {Card} from "react-native-elements"
-import Item from "./ItemComponent";
+import HighlightInfo from "./HighlightInfo";
 
 function Highlights(props) {
     return(
@@ -15,7 +15,7 @@ function Highlights(props) {
             </Card>
             <Button
                 title="Go to Item"
-                onPress={() => props.navigation.navigate("Item")}
+                onPress={() => props.navigation.navigate("HighlightInfo")}
             />
         </View>
     )
