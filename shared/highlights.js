@@ -1,4 +1,4 @@
-export const ARTIFACTS = [
+export const HIGHLIGHTS = [
     {
         id: 0,
         name: "Olympia Typewriter",
