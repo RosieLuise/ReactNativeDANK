@@ -8,7 +8,7 @@ function Highlights(props) {
     return(
         <View>
             <Card   
-                featuredTitle="Hilights title"
+                featuredTitle="Highlights title"
                 image={{uri: ".\assets\adaptive-icon.png"}}
             >
                 <Text style={{margin: 10}}>This is the highlights master component</Text>

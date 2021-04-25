@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import { Icon } from 'react-native-elements';
 import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -14,35 +15,71 @@ const Drawer = createDrawerNavigator();
 
 const Stack = createStackNavigator();
 
-const HomeStackNavigator = () => {
+const HomeStackNavigator = ({navigation}) => {
   return(
     <Stack.Navigator>
-      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen 
+          name="Home" 
+          component={Home} 
+          options={{
+            headerLeft: () => (
+              <Icon name="list" type="font-awesome" onPress={() => navigation.toggleDrawer()} />
+            )
+
+          }}
+        />
     </Stack.Navigator>
   )
 }
 
-const ContactStackNavigator = () => {
+const ContactStackNavigator = ({navigation}) => {
   return(
     <Stack.Navigator>
-      <Stack.Screen name="Contact" component={Contact} />
+      <Stack.Screen 
+        name="Contact" 
+        component={Contact} 
+        options={{
+          headerLeft: () => (
+            <Icon name="list" type="font-awesome" onPress={() => navigation.toggleDrawer()} />
+          )
+
+        }}
+      />
     </Stack.Navigator>
   )
 }
 
-const HighlightsStackNavigator = () => {
+const HighlightsStackNavigator = ({navigation}) => {
   return(
     <Stack.Navigator initialRouteName="Highlights">
-      <Stack.Screen name="Highlights" component={Highlights} />
+      <Stack.Screen 
+        name="Highlights" 
+        component={Highlights} 
+        options={{
+          headerLeft: () => (
+            <Icon name="list" type="font-awesome" onPress={() => navigation.toggleDrawer()} />
+          )
+
+        }}
+      />
       <Stack.Screen name="HighlightInfo" component={HighlightInfo} />
     </Stack.Navigator>
   )
 }
 
-const ExhibitsStackNavigator = () => {
+const ExhibitsStackNavigator = ({navigation}) => {
   return(
     <Stack.Navigator initialRouteName="Highlights">
-      <Stack.Screen name="Exhibits" component={Exhibits} />
+      <Stack.Screen 
+        name="Exhibits" 
+        component={Exhibits} 
+        options={{
+          headerLeft: () => (
+            <Icon name="list" type="font-awesome" onPress={() => navigation.toggleDrawer()} />
+          )
+
+        }}
+      />
       <Stack.Screen name="ExhibitInfo" component={ExhibitInfo} />
     </Stack.Navigator>
   )
