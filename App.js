@@ -6,7 +6,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import Home from "./components/HomeComponent";
 import Contact from "./components/ContactComponent";
 import Highlights from "./components/HighlightsComponent";
-import Item from "./components/ItemComponent";
+import HighlightInfo from "./components/HighlightInfo";
 
 const Drawer = createDrawerNavigator();
 
@@ -32,7 +32,7 @@ const HighlightsStackNavigator = () => {
   return(
     <Stack.Navigator initialRouteName="Highlights">
       <Stack.Screen name="Highlights" component={Highlights} />
-      <Stack.Screen name="Item" component={Item} />
+      <Stack.Screen name="HighlightInfo" component={HighlightInfo} />
     </Stack.Navigator>
   )
 }
