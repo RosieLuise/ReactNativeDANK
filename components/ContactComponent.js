@@ -8,8 +8,17 @@ class Contact extends Component {
         super(props);
 
         this.state = {
-
+            name: "",
+            email: "",
+            comments: ""
         }
+    }
+
+    handleSubmit() {
+        Alert.alert("Result", `
+        Name: ${this.state.name}\n
+        Email: ${this.state.email}\n
+        Comment: ${this.state.comments}`);
     }
     
     render() {
@@ -28,17 +37,27 @@ class Contact extends Component {
                         <Text>Have a question? Feel free to submit it below:</Text>
                         <Input 
                             placeholder="Name"
+                            leftIcon={{name: "user-o", type: "font-awesome"}}
+                            leftIconContainerStyle={{paddingRight: 10}}
+                            onChangeText={name => this.setState({name: name})}
                         />
                         <Input 
                             placeholder="Email"
+                            leftIcon={{name: "envelope", type: "font-awesome"}}
+                            leftIconContainerStyle={{paddingRight: 10}}
+                            onChangeText={email => this.setState({email: email})}
                         />
                         <Input 
                             placeholder="Comments"
                             multiline
                             numberOfLines={4}
                             style={{textAlignVertical:"top"}}
+                            onChangeText={comments => this.setState({comments: comments})}
                         />
-                        <Button title="submit" />
+                        <Button 
+                            title="submit" 
+                            onPress={() => this.handleSubmit()}
+                        />
                     </Card>
                 </View>
             </ScrollView>
