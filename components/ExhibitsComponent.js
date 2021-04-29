@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { EXHIBITS } from '../shared/exhibits';
-import { FlatList } from 'react-native';
-import { ListItem } from 'react-native-elements';
+import { Button, FlatList } from 'react-native';
+import { ListItem, Avatar } from 'react-native-elements';
 
 class Exhibits extends Component {
     constructor(props) {
@@ -18,12 +18,15 @@ class Exhibits extends Component {
         const renderExhibitItem = ({item}) => {
             console.log('string item: ', item);
             return (
-                <ListItem>
-                    {/* // title={item.name}
-                    // image1={item.image1}
-                    // onPress={() => this.state.navigation.navigate("ExhibitInfo", {item})} */}
+                <ListItem.Content style={styles.container}>
+
+                    {/* title={item.name}
+                    onPress={() => this.state.navigation.navigate("ExhibitInfo", {item})} */}
+
                     <ListItem.Title>{item.name}</ListItem.Title>
-                </ListItem>
+                    <ListItem.Subtitle>{item.overview}</ListItem.Subtitle>
+                    <Button title="Visit this section" onPress={() => props.navigation.navigate("exhibitInfo")}></Button>
+                </ListItem.Content>
             );
         };
 
@@ -38,5 +41,11 @@ class Exhibits extends Component {
     }
 
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1
+    }
+});
 
 export default Exhibits;
