@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { EXHIBITS } from '../shared/exhibits';
 import { Button, FlatList } from 'react-native';
-import { ListItem, Avatar } from 'react-native-elements';
+import { ListItem } from 'react-native-elements';
 
 class Exhibits extends Component {
     constructor(props) {
@@ -18,14 +18,14 @@ class Exhibits extends Component {
         const renderExhibitItem = ({item}) => {
             console.log('string item: ', item);
             return (
-                <ListItem.Content style={styles.container}>
+                <ListItem.Content>
 
                     {/* title={item.name}
                     onPress={() => this.state.navigation.navigate("ExhibitInfo", {item})} */}
 
                     <ListItem.Title>{item.name}</ListItem.Title>
                     <ListItem.Subtitle>{item.overview}</ListItem.Subtitle>
-                    <Button title="Visit this section" onPress={() => props.navigation.navigate("exhibitInfo")}></Button>
+                    <Button title="Visit this section" onPress={() => this.state.navigation.navigate("ExhibitInfo", {item: item})}></Button>
                 </ListItem.Content>
             );
         };
@@ -42,10 +42,10 @@ class Exhibits extends Component {
 
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1
-    }
-});
+// const styles = StyleSheet.create({
+//     container: {
+//         flex: 1
+//     }
+// });
 
 export default Exhibits;

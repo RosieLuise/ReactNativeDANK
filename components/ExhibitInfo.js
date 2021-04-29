@@ -1,17 +1,34 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, Image } from "react-native";
 
 function ExhibitInfo(props) {
+
+    const item = props.route.params.item;
     
     return (
         <View>
             <Text>{item.name}</Text>
-            {/* {props.item.image1}} */}
-            {/* <Text>{props.item.text1}</Text>
-            {props.item.image2}
-            <Text>{props.item.text2}</Text>
-            {props.item.image3}
-            <Text>{props.item.text3}</Text> */}
+
+            <Image>
+                {item.image1}
+            </Image>
+
+            <Text>{item.text1}</Text>
+
+
+            
+{/* 
+            <View>
+                {item.image1}
+            </View>
+
+            <Text>{item.text2}</Text>
+
+            <View>
+                {item.image1}
+            </View>
+            
+            <Text>{item.text3}</Text> */}
         </View>
     );
 }
