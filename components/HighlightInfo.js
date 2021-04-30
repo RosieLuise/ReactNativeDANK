@@ -1,17 +1,19 @@
 import React from 'react';
-import {Button, View, Text} from "react-native";
+import {Button, View, Text, Image, ScrollView} from "react-native";
 import {Card} from "react-native-elements"
 
-function HighlightInfo(props) {
+function HighlightInfo({route}) {
+    const item = route.params.item;
     return(
-        <View>
-            <Card   
-                featuredTitle="Item title"
-                image={{uri: ".\assets\adaptive-icon.png"}}
-            >
-                <Text style={{margin: 10}}>This is a specific highlight item component</Text>
+        <ScrollView>
+            <Card containerStyle={{padding: 0, justifyContent: "center"}}>
+                <Card.Title>{item.name}</Card.Title>
+                <Image 
+                    source={item.altImage}
+                    style={{}}
+                />
             </Card>
-        </View>
+        </ScrollView>
     )
 }
 export default HighlightInfo;
