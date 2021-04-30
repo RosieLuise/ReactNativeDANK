@@ -1,15 +1,20 @@
 import React from 'react';
 import {Button, View, Text, FlatList} from "react-native";
-import {Card, ListItem} from "react-native-elements"
-import HIGHLIGHTS from "../shared/highlights";
+import {Card, ListItem, Tile} from "react-native-elements"
+import {HIGHLIGHTS} from "../shared/highlights";
 
-function Highlights() {
-    const renderHighlight = (item) => {
+function Highlights({navigation}) {
+    const renderHighlight = ({item}) => {
         return (
-            <ListItem
-                onPress={() => {}}
+            <Tile 
                 title={item.name}
-            />
+                imageSrc={item.image}    
+                onPress={() => {navigation.navigate("HighlightInfo", {item: item})}}
+            >
+                <View>
+                    <Text>{item.description}</Text>
+                </View>
+            </Tile>
         );
     };
 
