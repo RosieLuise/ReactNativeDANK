@@ -6,12 +6,14 @@ function HighlightInfo({route}) {
     const item = route.params.item;
     return(
         <ScrollView>
-            <Card containerStyle={{padding: 0, justifyContent: "center"}}>
+            <Card containerStyle={{padding: 10, alignContent: "center", justifyContent: "center"}}>
                 <Card.Title>{item.name}</Card.Title>
+                <Text style={{padding: 0, textAlign: "center", width: "100%"}}>{item.date}</Text>
                 <Image 
                     source={item.altImage}
-                    style={{}}
+                    style={{width: "100%"}}
                 />
+                <Text>{item.details}</Text>
             </Card>
         </ScrollView>
     )
